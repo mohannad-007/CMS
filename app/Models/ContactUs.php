@@ -9,8 +9,8 @@ class ContactUs extends Model
 {
     protected $guarded=[];
 
-    public function company() : BelongsTo
-    {
-        return $this->belongsTo(Company::class);
-    }
+//    public function company() : BelongsTo
+//    {
+//        return $this->belongsTo(Company::class);
+//    }
 }

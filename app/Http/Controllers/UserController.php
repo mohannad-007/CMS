@@ -14,9 +14,8 @@ class UserController extends Controller
     use RespondsWithStatus;
 
     public function getMyProfile(){
-        $profile = User::where('id',Filament::auth()->id())->first();
-        dd(auth()->user());
-        return $this->successResponse(Filament::auth(), 'Profile fetched successfully');
+        $profile = User::get();
+        return $this->successResponse($profile, 'Profile fetched successfully');
     }
 }
 

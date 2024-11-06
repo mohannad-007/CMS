@@ -37,10 +37,10 @@ class Company extends Model
     {
         return $this->hasOne(Service::class);
     }
-    public function contactUs() :HasOne
-    {
-        return $this->hasOne(ContactUs::class);
-    }
+//    public function contactUs() :HasOne
+//    {
+//        return $this->hasOne(ContactUs::class);
+//    }
     public function aboutCompany() :HasOne
     {
         return $this->hasOne(AboutCompany::class);
