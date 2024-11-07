@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('name')->nullable();
-            $table->string('company_details_title')->nullable(); //عنوان ال slider
-            $table->string('company_details')->nullable(); //تفاصيل ال slider
-            $table->string('company_Info')->nullable(); //يلي فوق ال footer بال aboutUs
+            $table->json('name')->nullable();
+            $table->json('company_details_title')->nullable(); //عنوان ال slider
+            $table->json('company_details')->nullable(); //تفاصيل ال slider
+            $table->json('company_Info')->nullable(); //يلي فوق ال footer بال aboutUs
             $table->integer('phone_number')->nullable();
             $table->timestamps();
         });

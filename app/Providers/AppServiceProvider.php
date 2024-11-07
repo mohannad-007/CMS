@@ -25,22 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-//        Filament::serving(function () {
-//            $logoUrl = asset('storage/images/logo.png'); // المسار للشعار
-//            $companyName = function (Company $query){
-//                return $query->where('user_id', auth()->id());
-//            };
-//
-//            // إضافة HTML مخصص في رأس الصفحة
-//            Filament::pushMeta([
-//                'before' => <<<HTML
-//                <div style="display: flex; align-items: center;">
-//                    <img src="{$logoUrl}" alt="Logo" style="height: 40px; margin-right: 10px;">
-//                    <span style="font-size: 1.25rem; font-weight: bold; color: #333;">{$companyName}</span>
-//                </div>
-//            HTML,
-//            ]);
-//        });
+        
     }
 
 

@@ -29,13 +29,4 @@ Route::prefix('/al_naweia')->group(function ()
     Route::get('/getAboutCompanyInfo',[AboutCompanyController::class,'getAboutCompanyInfo']);
     Route::get('/getAboutDetails',[AboutCompanyController::class,'getAboutDetails']);
     Route::post('/creatContactUs',[ContactUsController::class,'creatContactUs']);
-
 });
-
-
-//Route::group(['middleware' => ['auth:sanctum']], function () {
-//    Route::prefix('/al_naweia')->group(function () {
-//        Route::get('/getMyProfile',[UserController::class,'getMyProfile']);
-//
-//    });
-//});

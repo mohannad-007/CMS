@@ -17,6 +17,7 @@ class CompanyController extends Controller
     public function getMyCompany(){
         $company = Company::with('user')->get();
 //        $company = Company::get();
+//        $jsonFormat=json_decode($company);
         return $this->successResponse($company, 'Company fetched successfully');
     }
     public function getlogo(){

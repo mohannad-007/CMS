@@ -6,9 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Spatie\Translatable\HasTranslations;
 
 class Company extends Model
 {
+    use HasTranslations;
+
+
+    public array $translatable = [
+        'name',
+        'company_details_title',
+        'company_details',
+        'company_Info',
+    ];
+
+    public $casts = [
+        'name'=>'array',
+        'company_details_title'=>'array',
+        'company_details'=>'array',
+        'company_Info'=>'array',
+        ];
+
     protected $guarded=[];
 
 

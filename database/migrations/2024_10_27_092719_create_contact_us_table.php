@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 //            $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
             $table->tinyInteger('rate')->unsigned(); // 1 to 5
-            $table->string('information_problem');
-            $table->string('email')->nullable();
+            $table->json('information_problem');
+            $table->json('email')->nullable();
             $table->timestamps();
         });
     }

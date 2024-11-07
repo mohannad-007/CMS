@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('work_plan_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('workPlan_id')->constrained('work_plans')->cascadeOnDelete();
-            $table->string('title');
-            $table->string('description');
+            $table->json('title');
+            $table->json('description');
             $table->timestamps();
         });
     }

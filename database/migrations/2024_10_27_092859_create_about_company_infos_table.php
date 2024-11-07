@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('about_company_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('about_company_id')->constrained('about_companies')->cascadeOnDelete();
-            $table->string('description');
+            $table->json('description');
             $table->timestamps();
         });
     }

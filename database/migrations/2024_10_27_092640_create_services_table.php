@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
-            $table->string('question');
-            $table->string('service_image_file');
+            $table->json('question');
+            $table->json('service_image_file');
             $table->timestamps();
         });
     }

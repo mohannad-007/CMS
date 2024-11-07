@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('work_plans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
-            $table->string('work_image_file');
-            $table->string('section_title');
+            $table->json('work_image_file');
+            $table->json('section_title');
             $table->timestamps();
         });
     }
