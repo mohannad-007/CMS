@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\WorkPlan;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -17,6 +18,7 @@ use Illuminate\Http\UploadedFile;
 
 class WorkPlanResource extends Resource
 {
+    use Translatable;
     protected static ?string $model = WorkPlan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-pie';

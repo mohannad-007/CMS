@@ -6,10 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Translatable\HasTranslations;
 
 class WorkPlan extends Model
 {
+
+    use HasTranslations;
+
     protected $guarded=[];
+
+    public array $translatable = [
+        'section_title',
+    ];
+
+    public $casts = [
+        'section_title' => 'array',
+    ];
 
     public function company() : BelongsTo
     {

@@ -4,11 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Translatable\HasTranslations;
 
 class AboutDetails extends Model
 {
+    use HasTranslations;
     protected $guarded=[];
 
+    public array $translatable = [
+        'title',
+        'description',
+    ];
+
+    public $casts = [
+        'title'=>'array',
+        'description'=>'array',
+    ];
     public function company() : BelongsTo
     {
         return $this->belongsTo(Company::class);

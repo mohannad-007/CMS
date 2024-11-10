@@ -8,6 +8,7 @@ use App\Models\AboutDetails;
 use App\Models\Company;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutDetailsResource extends Resource
 {
+    use Translatable;
     protected static ?string $model = AboutDetails::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-queue-list';

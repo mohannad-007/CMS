@@ -5,10 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class AboutCompany extends Model
 {
+    use HasTranslations;
     protected $guarded=[];
+
+    public array $translatable = [
+        'question',
+    ];
+
+    public $casts = [
+        'question'=>'array',
+    ];
 
     public function company() : BelongsTo
     {

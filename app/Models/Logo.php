@@ -6,10 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Translatable\HasTranslations;
 
 class Logo extends Model
 {
+//    use HasTranslations;
     protected $guarded=[];
+
+//    public array $translatable = [
+//        'name',
+////        'logo_file',
+//    ];
+
+//    public $casts = [
+//        'name'=>'array',
+////        'logo_file'=>'array',
+//    ];
 
     public function company() : BelongsTo
     {

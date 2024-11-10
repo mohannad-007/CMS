@@ -6,11 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Translatable\HasTranslations;
 
 class Service extends Model
 {
+    use HasTranslations;
     protected $guarded=[];
 
+    public array $translatable = [
+        'question',
+    ];
+
+    public $casts = [
+        'question'=>'array',
+    ];
     public function company() : BelongsTo
     {
         return $this->belongsTo(Company::class);

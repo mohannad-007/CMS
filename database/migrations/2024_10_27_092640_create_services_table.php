@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
             $table->json('question');
-            $table->json('service_image_file');
+            $table->string('service_image_file');
             $table->timestamps();
         });
     }

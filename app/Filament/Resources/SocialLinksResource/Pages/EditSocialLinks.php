@@ -8,11 +8,13 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditSocialLinks extends EditRecord
 {
+    use EditRecord\Concerns\Translatable;
     protected static string $resource = SocialLinksResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
+            Actions\LocaleSwitcher::make(),
             Actions\ViewAction::make(),
             Actions\DeleteAction::make(),
         ];

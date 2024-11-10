@@ -25,7 +25,7 @@ class ContactUsRequest extends FormRequest
     {
         return [
             'rate' => 'required|integer|min:1|max:5',
-            'information_problem' => 'required|string|max:255',
+            'information_problem' => 'required|max:255',
         ];
     }
 

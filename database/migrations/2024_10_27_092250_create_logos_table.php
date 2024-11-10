@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
             $table->json('name');
-            $table->json('logo_file');
+            $table->string('logo_file');
             $table->timestamps();
         });
     }

@@ -22,6 +22,9 @@ class CompanyController extends Controller
     }
     public function getlogo(){
         $logo=Logo::first();
+        if (empty($logo)){
+             return $this->notFoundResponse('Logo not found');
+        }
         $logoPath=str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "", 'storage/'.$logo->logo_file);
         return $this->successResponse([
             'id'=>$logo->id,

@@ -13,13 +13,9 @@ class WorkPlanController extends Controller
 
     public function getWorkPlan(){
         $workPlan = WorkPlan::first();
-        $workPlanImage = str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "",'storage/'. $workPlan->work_image_file );
-        return $this->successResponse([
-            'id'=>$workPlan->id,
-            'company_id'=>$workPlan->company_id,
-            'work_image_file'=>asset($workPlanImage),
-            'section_title'=>$workPlan->section_title,
-        ], 'WorkPlan fetched successfully');
+        $workPlanImage = str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "",'http://127.0.0.1:8000/storage/'. $workPlan->work_image_file );
+        $workPlan->work_image_file= $workPlanImage;
+        return $this->successResponse($workPlan, 'WorkPlan fetched successfully');
     }
 
     public function WorkPlanInfo(){

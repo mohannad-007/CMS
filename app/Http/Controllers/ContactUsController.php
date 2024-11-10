@@ -6,6 +6,7 @@ use App\Http\Requests\ContactUsRequest;
 use App\Models\ContactUs;
 use App\Traits\RespondsWithStatus;
 use Illuminate\Http\Request;
+use function Pest\Laravel\json;
 
 class ContactUsController extends Controller
 {
@@ -14,9 +15,15 @@ class ContactUsController extends Controller
     public function creatContactUs(ContactUsRequest $request){
         $contactUs = ContactUs::create([
            'rate'=> $request->rate,
-           'information_problem'=> $request->information_problem,
-           'email'=>$request->email,
+           'information_problem'=>json_encode($request->information_problem),
+           'email'=>json_encode($request->email),
         ]);
-        return $this->resourceCreatedResponse($contactUs,'Contact Us created successfully');
+//        $contactUs2 = json_decode($contactUs->information_problem,true);
+
+        return $this->resourceCreatedResponse([
+            'rate'=> $contactUs->rate,
+            'information_problem'=> json_decode($contactUs->information_problem,true),
+            'email'=> json_decode($contactUs->email,true),
+        ],'Contact Us created successfully');
     }
 }

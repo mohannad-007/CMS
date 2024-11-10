@@ -4,11 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Translatable\HasTranslations;
 
 class SocialLinks extends Model
 {
+    use HasTranslations;
     protected $guarded=[];
 
+    public array $translatable = [
+        'platform',
+        'url',
+    ];
+
+    public $casts = [
+        'platform'=>'array',
+        'url'=>'array',
+    ];
     public function company() : BelongsTo
     {
         return $this->belongsTo(Company::class);
