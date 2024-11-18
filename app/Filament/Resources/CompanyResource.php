@@ -40,17 +40,14 @@ class CompanyResource extends Resource
                     ->maxLength(50),
                 Forms\Components\Textarea::make('company_details_title')
                     ->required()
-//                    ->rows(5)
                     ->autosize()
                     ->maxLength(500),
                 Forms\Components\Textarea::make('company_details')
                     ->required()
-//                    ->rows(5)
                     ->autosize()
                     ->maxLength(500),
                 Forms\Components\Textarea::make('company_Info')
                     ->required()
-//                    ->rows(5)
                     ->autosize()
                     ->maxLength(500),
                 Forms\Components\TextInput::make('phone_number')

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('logos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
-            $table->json('name');
+            $table->string('name');
             $table->string('logo_file');
             $table->timestamps();
         });

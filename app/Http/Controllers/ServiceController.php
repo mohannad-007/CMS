@@ -13,6 +13,7 @@ class ServiceController extends Controller
 
     public function getService(){
         $service = Service::first();
+//        dd($service->getTranslations('question'));
         $serviceImage = str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "",'http://127.0.0.1:8000/storage/'. $service->service_image_file);
         $service->service_image_file=$serviceImage;
         return $this->successResponse($service, 'Service fetched successfully');

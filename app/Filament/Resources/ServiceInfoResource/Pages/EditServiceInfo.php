@@ -10,6 +10,15 @@ class EditServiceInfo extends EditRecord
 {
     use EditRecord\Concerns\Translatable;
     protected static string $resource = ServiceInfoResource::class;
+    public function update(){
+//        $this->validate();
+        $this->record->update($this->data);
+    }
+    public function delete(){
+        $this->record->delete();
+        session()->flash('success', 'Record deleted successfully.');
+//        $this->redirect('/');
+    }
 
     protected function getHeaderActions(): array
     {

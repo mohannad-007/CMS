@@ -101,4 +101,5 @@ class SocialLinksResource extends Resource
             'edit' => Pages\EditSocialLinks::route('/{record}/edit'),
         ];
     }
+
 }

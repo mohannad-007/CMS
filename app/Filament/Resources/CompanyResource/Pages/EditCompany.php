@@ -10,6 +10,15 @@ class EditCompany extends EditRecord
 {
     use EditRecord\Concerns\Translatable;
     protected static string $resource = CompanyResource::class;
+    public function update(){
+//        $this->validate();
+        $this->record->update($this->data);
+    }
+    public function delete(){
+        $this->record->delete();
+        session()->flash('success', 'Record deleted successfully.');
+//        $this->redirect('/');
+    }
 
     protected function getHeaderActions(): array
     {

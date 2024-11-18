@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\Translatable\HasTranslations;
 
 class CompanyDetails extends Model
 {
-    use HasTranslations;
+    use HasTranslations,HasFactory;
     protected $guarded=[];
 
     public array $translatable = [

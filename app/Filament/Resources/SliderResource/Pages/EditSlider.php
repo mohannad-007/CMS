@@ -10,6 +10,16 @@ class EditSlider extends EditRecord
 {
     protected static string $resource = SliderResource::class;
 
+    public function update(){
+//        $this->validate();
+        $this->record->update($this->data);
+    }
+    public function delete(){
+        $this->record->delete();
+        session()->flash('success', 'Record deleted successfully.');
+//        $this->redirect('/');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
