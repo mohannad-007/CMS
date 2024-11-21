@@ -43,7 +43,6 @@ class AboutCompanyInfoTest extends TestCase
             ]
         ]);
 
-
     }
 
     /** @test */
