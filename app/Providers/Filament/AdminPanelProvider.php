@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\UserResource;
 use Filament\Facades\Filament;
+use Filament\FontProviders\LocalFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -25,6 +26,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use function Termwind\style;
+
 //use App\Filament\Pages\Settings;
 
 class AdminPanelProvider extends PanelProvider
@@ -38,16 +41,23 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'danger' => Color::Rose,
-                'gray' => 'rgb(107, 114, 128)',
+//                'gray' => 'rgb(107, 114, 128)',
+                'gray' => '#224A91',
+//                'gray' => '#EBF1FF',
+//                'gray' => '#FF7E1D',
+//                'gray' => 'rgb(107, 114, 128)',
                 'info' => Color::Blue,
-                'primary' => 'rgb(118,48,250)',
+//                'primary' => '#EBF1FF',
+                'primary' => '#FF7E1D',
+//                'primary' => '#224A91',
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
-            ->font('Poppins')
-            ->brandName('AL-Naweia')
-//            ->brandLogo(asset('storage/images/logo.png'))
-            ->brandLogoHeight('2rem')
+            ->font(url("./fonts/URWGeometricRegular.otf"))
+
+//            ->brandName('AL-Naweia')
+            ->brandLogo(asset('storage/images/logo.png'), style(['width' => '2rem', 'height' => '2rem']))
+//            ->brandLogoHeight('2rem')
             ->favicon(asset('storage/images/logo.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -82,6 +92,7 @@ class AdminPanelProvider extends PanelProvider
 //                // ...
 //            ])
 //            ->topbar(false)
+//            ->darkMode(false)
             ->topNavigation()
             ->authMiddleware([
                 Authenticate::class,

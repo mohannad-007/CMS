@@ -11,6 +11,12 @@ export default {
     ],
     theme: {
         extend: {
+            // colors: {
+            //     dynamic: {
+            //         light: '#224A91', // Light mode color
+            //         dark: '#ffffff',  // Dark mode color
+            //     },
+            // },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

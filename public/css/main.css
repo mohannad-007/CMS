@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'urw';
+    src: url("./fonts/URWGeometricRegular.otf");
+
+    /*url('/fonts/urw-geometric-regular.woff') format('woff');*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+}
+:root {
+    --primary-color: #224A91;
+}
+* {
+    color: var(--primary-color);
+}
+body {
+    font-family: 'urw', sans-serif;
+    color: #224A91;
+}
