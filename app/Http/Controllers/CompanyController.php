@@ -16,21 +16,25 @@ class CompanyController extends Controller
 
     public function getMyCompany(){
         $company = Company::with('user')->get();
-//        $company = Company::get();
-//        $jsonFormat=json_decode($company);
-        return $this->successResponse($company, 'Company fetched successfully');
+        return $this->successResponse(
+            $company,
+            'Company fetched successfully'
+        );
     }
     public function getlogo(){
         $logo=Logo::first();
         if (empty($logo)){
              return $this->notFoundResponse('Logo not found');
         }
-        $logoPath=str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "", 'storage/'.$logo->logo_file);
+        $logoPath=str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\",
+            "",
+            'storage/'.$logo->logo_file
+        );
         return $this->successResponse([
-            'id'=>$logo->id,
+            'id'        =>$logo->id,
             'company_id'=>$logo->company_id,
-            'name'=>$logo->name,
-            'LogoFile'=>asset($logoPath),
+            'name'      =>$logo->name,
+            'LogoFile'  =>asset($logoPath),
             'created_at'=>$logo->created_at,
             'updated_at'=>$logo->updated_at,
         ], 'Logo fetched successfully');
@@ -40,23 +44,35 @@ class CompanyController extends Controller
         $slider=Slider::get();
         $sliderData=[];
         foreach ($slider as $sliders){
-            $sliderPath=str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\", "", 'storage/'.$sliders->slider_file);
+            $sliderPath=str_replace("C:\\Users\\m.lababidi\\Desktop\\AL-Naweia\\public\\",
+                "",
+                'storage/'.$sliders->slider_file
+            );
             $sliderData[]=[
-                'id'=>$sliders->id,
+                'id'        =>$sliders->id,
                 'company_id'=>$sliders->company_id,
                 'SliderFile'=>asset($sliderPath),
                 'created_at'=>$sliders->created_at,
                 'updated_at'=>$sliders->updated_at,
             ];
         }
-        return $this->successResponse($sliderData, 'Sliders fetched successfully') ;
+        return $this->successResponse(
+            $sliderData,
+            'Sliders fetched successfully'
+        ) ;
     }
     public function getSocialLink(){
         $socilaLink = SocialLinks::get();
-        return $this->successResponse($socilaLink, 'SocialLink fetched successfully');
+        return $this->successResponse(
+            $socilaLink,
+            'SocialLink fetched successfully'
+        );
     }
     public function getCompanyDetails(){
         $companyDetails = CompanyDetails::get();
-        return $this->successResponse($companyDetails, 'CompanyDetails fetched successfully');
+        return $this->successResponse(
+            $companyDetails,
+            'CompanyDetails fetched successfully'
+        );
     }
 }

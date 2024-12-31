@@ -18,16 +18,19 @@ class ContactUsController extends Controller
     public function creatContactUs(ContactUsRequest $request){
         $email = User::first();
         $data=[
-            'rate'=> $request->rate,
+            'rate'               => $request->rate,
             'information_problem'=>$request->information_problem,
-            'email'=>$request->email,
+            'email'              =>$request->email,
         ];
         Mail::to($email->email)->send(new ContactUsMail($data));
         $contactUs = ContactUs::create([
-            'rate'=>$data['rate'],
+            'rate'               =>$data['rate'],
             'information_problem'=>$data['information_problem'],
-            'email'=>$data['email'],
+            'email'              =>$data['email'],
         ]);
-        return $this->resourceCreatedResponse($contactUs,'Contact Us created successfully');
+        return $this->resourceCreatedResponse(
+            $contactUs,
+            'Contact Us created successfully'
+        );
     }
 }

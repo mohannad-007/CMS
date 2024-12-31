@@ -33,7 +33,8 @@ class AboutCompanyInfoResource extends Resource
                     ->label('Company Name')
                     ->relationship('aboutCompany', 'id', fn ($query) => $query->whereHas('company', fn ($q) => $q->where('user_id', auth()->id())))
                     ->getOptionLabelFromRecordUsing(fn ($record) => $record->company->name)
-                    ->default(fn () => auth()->user()->service->id ?? null)                    ->required(),
+                    ->default(fn () => auth()->user()->service->id ?? null)
+                    ->required(),
                 Forms\Components\TextInput::make('description')
                     ->required()
                     ->maxLength(255),

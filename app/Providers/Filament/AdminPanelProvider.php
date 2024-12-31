@@ -41,22 +41,22 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'danger' => Color::Rose,
-//                'gray' => 'rgb(107, 114, 128)',
-                'gray' => '#224A91',
+               'gray' => 'rgb(107, 114, 128)',
+                // 'gray' => '#224A91',
 //                'gray' => '#EBF1FF',
 //                'gray' => '#FF7E1D',
 //                'gray' => 'rgb(107, 114, 128)',
                 'info' => Color::Blue,
-//                'primary' => '#EBF1FF',
+            //    'primary' => '#EBF1FF',
                 'primary' => '#FF7E1D',
-//                'primary' => '#224A91',
+            //    'primary' => '#224A91',
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
             ->font(url("./fonts/URWGeometricRegular.otf"))
 
 //            ->brandName('AL-Naweia')
-            ->brandLogo(asset('storage/images/logo.png'), style(['width' => '2rem', 'height' => '2rem']))
+            ->brandLogo(asset('storage/images/logo.png'))
 //            ->brandLogoHeight('2rem')
             ->favicon(asset('storage/images/logo.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

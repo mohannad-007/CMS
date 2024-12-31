@@ -14,15 +14,24 @@ class AboutCompanyController extends Controller
 
     public function getAboutCompany(){
         $aboutCompany = AboutCompany::first();
-        return $this->successResponse($aboutCompany, 'About Company fetched successfully');
+        return $this->successResponse(
+            $aboutCompany,
+            'About Company fetched successfully'
+        );
     }
 
     public function getAboutCompanyInfo(){
         $aboutCompanyInfo = AboutCompanyInfo::get();
-        return $this->successResponse($aboutCompanyInfo, 'About Company fetched successfully');
+        return $this->successResponse(
+            $aboutCompanyInfo,
+            'About Company fetched successfully'
+        );
     }
     public function getAboutDetails(){
         $aboutCompanyDetails = AboutDetails::get();
-        return $this->successResponse($aboutCompanyDetails, 'About Company Details fetched successfully');
+        return $this->successResponse(
+            $aboutCompanyDetails,
+            'About Company Details fetched successfully'
+        );
     }
 }
